@@ -1,5 +1,5 @@
-# ICS2O-TEMPLATE
+# Task Thingy
 
-[![Run on Repl.it](https://repl.it/badge/github/Alex-Nelson-1/ICS2O-TEMPLATE)](https://repl.it/github/Alex-Nelson-1/ICS2O-TEMPLATE)
+[![Run on Repl.it](https://repl.it/badge/github/bigpandabusiness/Task-Website)](https://repl.it/github/bigpandabusiness/Task-Website)
 
-This site can be found at: [https://Alex-Nelson-1.github.io/ICS2O-TEMPLATE](https://Alex-Nelson-1.github.io/ICS2O-TEMPLATE)
+This site can be found at: [https://bigpandabusiness.github.io/Task-Website](https://bigpandabusiness.github.io/Task-Website)
