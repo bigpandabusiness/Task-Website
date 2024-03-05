@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--ICS2O-UNIT1-TEMPLATE-->
+<html lang="en-ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="A Webpage with MDL" />
+    <meta name="keywords" content="mths isc2o" />
+    <meta name="author" content="Alex Nelson" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="viewport" content="width=device-width, initial_scale=1.0" />
+    <link
+      rel="canonical"
+      href="https://github.com/Alex-Nelson-1/ICS2O-TEMPLATE"
+    />
+    <link rel="manifest" href="/ICS2O-TEMPLATE/manifest.webmanifest" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!--- None blocking for Lighthouse report --->
+    <!--- https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously --->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      media="none"
+      onload="if(media!='all')media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      />
+    </noscript>
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.indigo-green.min.css"
+      media="none"
+      onload="if(media!='all')media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://code.getmdl.io/1.3.0/material.indigo-green.min.css"
+      />
+    </noscript>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <title>TEMPLATE</title>
+  </head>
+  <body>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header" style="text-align: center">
+        <div class="mdl-layout-header-row">
+          <span class="mdl-layout__title">Header</span>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="page-content" style="padding-left: 250px">
+          Type something
+        </div>
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="[a-z]*"
+              id="text"
+            />
+            <!--This will control the textfields error message and label-->
+            <label class="mdl-textfield__label" for="text">Text...</label>
+            <span class="mdl-textfield__error"
+              >No numbers, spaces, or special characters</span
+            >
+          </div>
+        </form>
+        <!-- Accent-colored raised button with ripple -->
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+        >
+          Button
+        </button>
+        <br />
+        <br />
+        <img width="100" src="./image/Oranges.jpeg" alt="Oranges" />
+      </main>
+    </div>
+  </body>
+</html>
