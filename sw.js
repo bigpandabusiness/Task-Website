@@ -1,4 +1,4 @@
-var GHPATH = "/ICS2O-TEMPLATE"
+var GHPATH = "/Task-Website"
 var APP_PREFIX = "gppwa_"
 var VERSION = "version_001"
 var URLS = [
