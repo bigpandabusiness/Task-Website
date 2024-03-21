@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+ background-color: #050f2e;
 }
 h1 {
   color: black;
@@ -8,18 +8,19 @@ p {
   color: black;
 }
 
+
 /* Add a black background color to the top navigation */
 .navbar {
-  background-color: #283350;
+  background-color: #242e47;
   overflow: hidden;
 }
-
+ 
 /* Style the links inside the navigation bar */
 .navbar a {
-  float: left;
+  float: right;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 17px 25px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -28,5 +29,40 @@ p {
 .navbar a:hover {
   background-color: #96237a;
   color: #ffffff;
+}
+
+.navbar p {
+  float: left;
+  color: #f2f2f2;
+  padding-left: 16px;
+  font-size: 16px;
+  
+}
+.navbar img {
+  float: left;
+  margin-top: 5px;
+  margin-left: 6px;
+}
+
+.box {
+  border-radius: 15px;
+  width: 150px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+  margin: px;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  color: #96237a;
+  padding: 30px 20px;
 }
 

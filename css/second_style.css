@@ -1,9 +1,44 @@
 body {
-  background-color: white;
+  background-color: #242e47;
 }
 h1 {
   color: black;
 }
 p {
   color: black;
+}
+
+/* Add a black background color to the top navigation */
+.navbar {
+  background-color: #283350;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #96237a;
+  color: #ffffff;
+}
+
+.navbar p {
+  float: left;
+  color: #f2f2f2;
+  padding-left: 16px;
+  font-size: 16px;
+
+}
+.navbar img {
+  float: left;
+  margin-top: 5px;
+  margin-left: 6px;
 }
