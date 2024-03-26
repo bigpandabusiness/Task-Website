@@ -75,7 +75,7 @@ p {
   left: 0;
   background-color: #020218; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
+  padding-top: px;
 }
 
 /* The navigation menu links */
@@ -90,7 +90,7 @@ p {
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #ffffff;
-   background-color: #01004a;
+   background-color: #96237a;
 }
 
 /* Style page content */
@@ -108,8 +108,13 @@ p {
 .sidenav .material-symbols-outlined {
   /* Styles for the menu button inside the sidebar */
   display: block; /* Ensure the menu button appears as a block element */
-  padding: 20px; /* Adjust padding as needed */
+  padding: 30px; /* Adjust padding as needed */
   color: white; /* Color of the menu button */
   cursor: pointer; /* Change cursor to pointer on hover */
+    padding-bottom: 30px;
+    background-color: #96237a;
+  }
 }
+
+
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tags for SEO -->
   <meta charset="UTF-8">
   <meta name="desription" content="This is the home page for my task website that helps me">
   <meta name="keywords" content="TaskRPG, Task, Website, Rpg, Helpful, Time Management">
@@ -8,22 +9,55 @@
   <meta name="robot" content="noindex, nofollow">
   <meta name="author" content="Hidden Panda">
   <meta name="copyright" content="Copyright (c) 2024 Hidden Panda">
-  <title>TaskRPG, Website to help me complete my task in a fun way</title>
-  <link rel="stylesheet" href="css/second_style.css">
+  
+<!-- Website title -->
+  <title>Cool Website</title>
+  
+<!-- Links to CSS and Javascript -->
+  <script src="./js/script.js"></script>
+  <script src="./js/sidebar.js"></script>
+  <link rel="stylesheet" href="css/main_style.css">
+
+<!-- Favicon code-->
   <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<!-- Webmanifest -->
+  <link rel="manifest" href="site.webmanifest" />
+  
+<!-- Menu Icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+  
+<!-- Navigation Bar-->
 <body>
-  <div class="navbar">
-    <a href="#about">ToDo</a>
-    <a href="#contact">Weekly</a>
-    <a href="#daily">Daily</a>
-    <a class="active" href="index.html">Home</a>
-    <img src="android-chrome-192x192.png" alt="Logo" width="37" height="37">
-    <p>TaskR</p>
-  </div>
+  <header>
+    <div class="navbar" id="navbar">
+      <span class="material-symbols-outlined" style="font-size: 30px;" onclick="sideBar()" id="menuButton">
+      menu
+      </span>
+      <a href="login.html">Login</a>
+      <a href="#about">ToDo</a>
+      <a href="#contact">Weekly</a>
+      <a href="#daily">Daily</a>
+      <a class="active" href="index.html">Home</a>
+      <img src="android-chrome-192x192.png" alt="Logo" width="30" height="30" id="icon">
+    </div>
+    <div id="sidebar">
+    </div>
+  </header>
+  
+<!-- Main content -->
+  <main class="main">
+<!-- Add boxes circle-->
+
+  </main>
+
+<!-- Add boxes square-->
+    <div id="div1">
+    </div>
+  </main>
 </body>
 </html>
