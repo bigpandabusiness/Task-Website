@@ -11,8 +11,11 @@ p {
 
 /* Add a black background color to the top navigation */
 .navbar {
-  background-color: #242e47;
+  background-color: none;
   overflow: hidden;
+  padding-right: 35px;
+  padding-left: 20px;
+  padding-top: 10px;
 }
  
 /* Style the links inside the navigation bar */
@@ -34,27 +37,15 @@ p {
 .navbar p {
   float: left;
   color: #f2f2f2;
-  padding-left: 16px;
+  padding-left: 5px;
   font-size: 16px;
-  
 }
+
 .navbar img {
   float: left;
   margin-top: 5px;
   margin-left: 6px;
 }
-
-.box {
-  border-radius: 5px;
-  width: 150px;
-  height: 20px;
-  background-color: white;
-  border: 1px solid black;
-  text-align: center;
-  padding: 10px;
-  margin-top: 10px;
-}
-
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -62,7 +53,63 @@ p {
   'wght' 400,
   'GRAD' 0,
   'opsz' 24;
-  color: #96237a;
-  padding: 30px 20px;
+  color: white;
+}
+
+.navbar span {
+  float: left;
+  margin-top: 5px;
+  margin-left: 6px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 250px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #020218; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 26px 8px 26px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #c7c7c7;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #ffffff;
+   background-color: #01004a;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.sidenav .material-symbols-outlined {
+  /* Styles for the menu button inside the sidebar */
+  display: block; /* Ensure the menu button appears as a block element */
+  padding: 20px; /* Adjust padding as needed */
+  color: white; /* Color of the menu button */
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
