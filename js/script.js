@@ -5,9 +5,10 @@ window.onload = function() {
   showLevel()
 }
 
-var level = localStorage.getItem("level")
-var currentXP = localStorage.getItem("currentXP")
-var maxXP = localStorage.getItem("maxXP")
+var level = localStorage.getItem("level")  
+var currentXP = localStorage.getItem("currentXP") - (-1)
+var maxXP = localStorage.getItem("maxXP") 
+var maxXP = level * 5
 
 var interval = 400
 
@@ -38,8 +39,8 @@ function showLevel() {
     currentXP = parseInt(currentXP)
     maxXP = parseInt(maxXP);
     // Optionally, you can add text to the level bar here
-    var levelBar = document.getElementById("levelBar")
-    levelBar.innerHTML = '<div class="levelBarText">'+ "Lvl: " + level + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + currentXP + "/" + maxXP + '</div>'
+    var levelBarText = document.getElementById("levelBarText")
+    levelBarText.innerHTML =  "Lvl: " + level + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + currentXP + "/" + maxXP 
   }
 }
 
@@ -49,20 +50,34 @@ var timer = window.setInterval(function(){
 
   currentXP = parseInt(currentXP);
   maxXP = parseInt(maxXP);
+  currentXP += 1;
+  localStorage.setItem("currentXP", currentXP)
 
-  // currentXP = currentXP + 1;
-  // localStorage.setItem("currentXP", currentXP);
 
   if (currentXP >= maxXP) {
     var level = localStorage.getItem("level");
     level = parseInt(level) + 1;
     currentXP = currentXP - maxXP;
-    maxXP = maxXP + 5;
+    maxXP = level * 5;
 
     localStorage.setItem("level", level);
     localStorage.setItem("maxXP", maxXP);
     localStorage.setItem("currentXP", currentXP);
   }
 }, interval);
+
+// Define the fillBar function outside of the setInterval function
+// function fillBar() {
+//   var overlayBar = document.getElementById("overlayBar");
+
+//   // Set the width of the overlayBar based on currentXP and maxXP
+//   var percentage = (currentXP / maxXP) * 100;
+//   overlayBar.style.width = percentage + '%';
+// }
+
+// // Call the fillBar function within the setInterval function
+// var timer = window.setInterval(fillBar, interval);
+
+
 
 
