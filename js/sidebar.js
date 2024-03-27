@@ -5,17 +5,17 @@ function sideBar() {
     // Sidebar content is empty, add menu button and other content
     sidebarElement.innerHTML = `
     <div class="sidenav" id="sidenav">
-      <div>
+      <div class="sidebarTop">
         <span class="material-symbols-outlined" style="font-size: 30px;" onclick="sideBar()">
         menu
         </span>
       </div>
-      <a href='#'>About</a>
-      <a href='#'>Services</a>
-      <a href='#'>Clients</a>
-      <a href='#'>Contact</a>
-      <a href='#'>About</a>
-      <a href='#'>Services</a>
+      <a href='#'>Home</a>
+      <a href='#'>ToDo</a>
+      <a href='daily.html'>Daily</a>
+      <a href='#'>Weekly</a>
+      <a href='login.html'>Login</a>
+      <a href='#'>Themes</a>
       <a href='#'>Clients</a>
       <a href='#'>Contact</a>
       <a href='#'>About</a>
