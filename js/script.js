@@ -5,8 +5,8 @@ window.onload = function() {
   showLevel()
 }
 
-var level = localStorage.getItem("level")  
-var currentXP = localStorage.getItem("currentXP") - (-1)
+var level = localStorage.getItem("level") 
+var currentXP = localStorage.getItem("currentXP") 
 var maxXP = localStorage.getItem("maxXP") 
 var maxXP = level * 5
 
@@ -15,6 +15,9 @@ var interval = 400
 function checkLevel() {
   if (level == null) {
     level = 1;
+    localStorage.setItem("level", level)
+  }
+  else {
     localStorage.setItem("level", level)
   }
 }
@@ -50,8 +53,7 @@ var timer = window.setInterval(function(){
 
   currentXP = parseInt(currentXP);
   maxXP = parseInt(maxXP);
-  currentXP += 1;
-  localStorage.setItem("currentXP", currentXP)
+
 
 
   if (currentXP >= maxXP) {
@@ -66,17 +68,7 @@ var timer = window.setInterval(function(){
   }
 }, interval);
 
-// Define the fillBar function outside of the setInterval function
-// function fillBar() {
-//   var overlayBar = document.getElementById("overlayBar");
 
-//   // Set the width of the overlayBar based on currentXP and maxXP
-//   var percentage = (currentXP / maxXP) * 100;
-//   overlayBar.style.width = percentage + '%';
-// }
-
-// // Call the fillBar function within the setInterval function
-// var timer = window.setInterval(fillBar, interval);
 
 
 

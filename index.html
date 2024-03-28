@@ -9,6 +9,7 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="author" content="Hidden Panda">
   <meta name="copyright" content="Copyright (c) 2024 Hidden Panda">
+  <meta name="google" value="notranslate"> 
   
   <!-- Website title -->
   <title>Cool Website</title>
@@ -16,9 +17,11 @@
   <!-- Links to CSS and Javascript -->
   <script src="./js/script.js"></script>
   <script src="./js/sidebar.js"></script>
+  <script src="./js/box_script.js"></script>
   <link rel="stylesheet" href="css/main_style.css">
   <link rel="stylesheet" href="css/sidebar_style.css">
-
+  <link rel="stylesheet" href="css/box_style.css">
+  
   <!-- Favicon code-->
   <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png" />
@@ -60,7 +63,16 @@
 
   <!-- Main content -->
   <main class="main">
-    <!-- Add boxes circle-->
+    <div class="container">
+      <div class="box" onclick="openPopup()">Click Me</div>
+    </div>
+
+    <button class="button" onclick="createBox()">Create Box</button>
+
+    <div id="popup" class="popup">
+      <!-- Content of the popup goes here -->
+      Dragable Elements
+    </div>
 
   </main>
 
