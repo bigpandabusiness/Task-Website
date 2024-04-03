@@ -93,7 +93,7 @@ p {
 .main {
   display: flex;
   color: white;
-  float: right;
+  float: left;
   padding-top: 50px;
 }
 
@@ -103,7 +103,7 @@ p {
 .coolness-container,
 .mentality-container,
 .social-container {
-  padding-right: 100px;
+  padding-right: 40px;
 }
 
 .statOutput {
@@ -111,9 +111,8 @@ p {
 }
 
 .statBar {
-  float: right;
   margin-top: 6px;
-  width: 125px; /* Adjust the width as needed */
+  width: 155px; /* Adjust the width as needed */
   height: 12px;
   background-color: #444; /* Adjust the background color */
   border-radius: 10px; /* Rounded corners */
@@ -122,4 +121,5 @@ p {
 
 .levelBarText {
   padding: 0 10px; /* Adjust the padding as needed */
+  font-size: 10px;
 }

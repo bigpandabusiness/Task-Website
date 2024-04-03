@@ -46,7 +46,6 @@ var charisma = parseInt(localStorage.getItem("charisma"));
 //Funciton to update the stats
 
 window.onload = function() {
-  checkStat('health');
   checkStat('physicality');
   checkStat('strength');
   checkStat('speed');
@@ -78,7 +77,6 @@ window.onload = function() {
   checkStat('charisma');
 
   //update stats
-  updateStat('health');
   updateStat('physicality');
   updateStat('strength');
   updateStat('speed');
@@ -98,6 +96,7 @@ window.onload = function() {
   updateStat('dancing');
   updateStat('music');
   updateStat('programming');
+  updateStat('hobbies');
   updateStat('mentality');
   updateStat('stress');
   updateStat('sadness');
@@ -110,36 +109,36 @@ window.onload = function() {
   updateStat('charisma');
 
   //show stats
-  showStat('health');
-  // showStat('physicality');
-  // showStat('strength');
-  // showStat('speed');
-  // showStat('endurance');
-  // showStat('jumping');
-  // showStat('intelligence');
-  // showStat('diligence');
-  // showStat('charisma');
-  // showStat('knowledge');
-  // showStat('wisdom');
-  // showStat('prospects');
-  // showStat('grades');
-  // showStat('relationship');
-  // showStat('money');
-  // showStat('coolness');
-  // showStat('cooking');
-  // showStat('dancing');
-  // showStat('music');
-  // showStat('programming');
-  // showStat('mentality');
-  // showStat('stress');
-  // showStat('sadness');
-  // showStat('calmness');
-  // showStat('peace');
-  // showStat('social');
-  // showStat('media');
-  // showStat('interactions');
-  // showStat('notDatingATwelveYearOld');
-  // showStat('charisma');
+  showStat('physicality');
+  showStat('strength');
+  showStat('speed');
+  showStat('endurance');
+  showStat('jumping');
+  showStat('intelligence');
+  showStat('diligence');
+  showStat('charisma');
+  showStat('knowledge');
+  showStat('wisdom');
+  showStat('prospects');
+  showStat('grades');
+  showStat('relationship');
+  showStat('money');
+  showStat('coolness');
+  showStat('cooking');
+  showStat('dancing');
+  showStat('music');
+  showStat('programming');
+  showStat('hobbies');
+  showStat('mentality');
+  showStat('stress');
+  showStat('sadness');
+  showStat('calmness');
+  showStat('peace');
+  showStat('social');
+  showStat('media');
+  showStat('interactions');
+  showStat('notDatingATwelveYearOld');
+  showStat('charisma');
 }
 
 
@@ -191,6 +190,6 @@ function showStat(statName) {
     mystatMaxXP = parseInt(mystatMaxXP)
 
     var statBarText = document.getElementById(statName + "BarText")
-    statBarText.innerHTML = "Lvl: " + level + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + currentXP + "/" + maxXP
+    statBarText.innerHTML = "Lvl: " + mystat + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + mystatXP + "/" + mystatMaxXP
   }
 }
