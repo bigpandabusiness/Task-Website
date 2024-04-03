@@ -1,5 +1,5 @@
 window.onload = function() {
-  checkLevel
+  checkLevel()
   checkCurrentXP()
   checkMaxXP()
   showLevel()
@@ -67,9 +67,3 @@ var timer = window.setInterval(function(){
     localStorage.setItem("currentXP", currentXP);
   }
 }, interval);
-
-
-
-
-
-

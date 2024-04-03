@@ -1,0 +1,125 @@
+body {
+ background-color: #050f2e;
+}
+h1 {
+  color: white;
+}
+p {
+  color: white;
+}
+
+
+/* Add a black background color to the top navigation */
+.navbar {
+  background-color: none;
+  overflow: hidden;
+  padding-right: 35px;
+  padding-left: 20px;
+  padding-top: 10px;
+  align-items: center;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 17px 25px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #96237a;
+  color: #ffffff;
+}
+
+.navbar p {
+  float: left;
+  color: #f2f2f2;
+  padding-left: 5px;
+  font-size: 16px;
+}
+
+.navbar img {
+  float: left;
+  margin-top: 5px;
+  margin-left: 6px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 305,
+  'GRAD' 0,
+  'opsz' 24;
+  color: white;
+}
+
+.navbar span {
+  float: left;
+  margin-top: 5px;
+  margin-left: 6px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.levelContainer {
+  display: flex;
+  align-items: center;
+  float: right;
+  padding-top: 13px;
+}
+
+.levelOutput {
+  color: white;
+}
+
+.levelBar {
+  float: right;
+  margin-top: 6px;
+  width: 200px; /* Adjust the width as needed */
+  height: 20px;
+  background-color: #444; /* Adjust the background color */
+  border-radius: 10px; /* Rounded corners */
+  color: white;
+}
+
+.levelBarText {
+  padding: 0 10px; /* Adjust the padding as needed */
+}
+
+.main {
+  display: flex;
+  color: white;
+  float: right;
+  padding-top: 50px;
+}
+
+.health-container,
+.intelligence-container,
+.prospects-container,
+.coolness-container,
+.mentality-container,
+.social-container {
+  padding-right: 100px;
+}
+
+.statOutput {
+  color: white;
+}
+
+.statBar {
+  float: right;
+  margin-top: 6px;
+  width: 125px; /* Adjust the width as needed */
+  height: 12px;
+  background-color: #444; /* Adjust the background color */
+  border-radius: 10px; /* Rounded corners */
+  color: white;
+}
+
+.levelBarText {
+  padding: 0 10px; /* Adjust the padding as needed */
+}

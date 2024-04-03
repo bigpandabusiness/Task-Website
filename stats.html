@@ -10,18 +10,19 @@
   <meta name="author" content="Hidden Panda">
   <meta name="copyright" content="Copyright (c) 2024 Hidden Panda">
   <meta name="google" value="notranslate"> 
-  
+
   <!-- Website title -->
   <title>Cool Website</title>
-  
+
   <!-- Links to CSS and Javascript -->
   <script src="./js/script.js"></script>
   <script src="./js/sidebar.js"></script>
   <script src="./js/box_script.js"></script>
-  <link rel="stylesheet" href="css/main_style.css">
+  <script src="./js/stats.js"></script>
   <link rel="stylesheet" href="css/sidebar_style.css">
   <link rel="stylesheet" href="css/box_style.css">
-  
+  <link rel="stylesheet" href="css/stats_style.css">
+
   <!-- Favicon code-->
   <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png" />
@@ -30,14 +31,14 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <!-- Webmanifest -->
   <link rel="manifest" href="site.webmanifest" />
-  
+
   <!-- Menu Icon -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
   <!-- Link to Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
 </head>
-  
+
 <!-- Navigation Bar-->
 <body>
   <header>
@@ -55,9 +56,9 @@
           </div>
         </div>
         <a href="login.html">Login</a>
-        <a href="stats.html">Stats</a>
+        <a href="#about">Market</a>
         <a href="daily.html">Daily</a>
-        <a class="active" href="#home">Home</a>
+        <a class="active" href="index.html">Home</a>
         <img src="android-chrome-192x192.png" alt="Logo" width="30" height="30" id="icon">
       </div>
     </div>
@@ -66,6 +67,54 @@
 
   <!-- Main content -->
   <main class="main">
+    <div class="intelligence-container">
+      <div>Intelligence</div>
+      <div>Diligence</div>
+      <div>Kowledge</div>
+      <div>Wisdom</div>
+    </div>
+    <div class="prospects-container">
+      <div>Prospects</div>
+      <div>Grades</div>
+      <div>Relationship</div>
+      <div>Money</div>
+    </div>
+    <div class="mentality-container">
+      <div>Mentality</div>
+      <div>Stress</div>
+      <div>Sadness</div>
+      <div>Calmness</div>
+      <div>Peace</div>
+    </div>
+    <div class="social-container">
+      <div>Social</div>
+      <div>Media</div>
+      <div>Interactions</div>
+      <div>NotDatingATwelveYearOld</div>
+      <div>Charizzma</div>
+    </div>
+    <div class="health-container">
+      <div>Health</div>
+        <div>Physicality</div>
+      <div id="healthOutput" class="statOutput">
+        <span class="levelNumber" id="healthLevelNumber"></span>
+      </div>
+      <div class="statBar" id="statBar">
+        <div class="levelBarText" id="healthBarText""></div>
+      </div>
+        <div>Strength</div>
+        <div>Speed</div>
+        <div>Endurance</div>
+        <div>Jumping</div>
+    </div>
+    <div class="coolness-container">
+      <div>Coolness</div>
+      <div>Cooking</div>
+      <div>Dancing</div>
+      <div>Music</div>
+      <div>Hobbies</div>
+      <div>Programming</div>
+    </div>
   </main>
 
 
