@@ -9,7 +9,6 @@ var jumping = parseInt(localStorage.getItem("jumping"));
 // Intelligence
 var intelligence = parseInt(localStorage.getItem("intelligence"));
 var diligence = parseInt(localStorage.getItem("diligence"));
-var charisma = parseInt(localStorage.getItem("charisma"));
 var knowledge = parseInt(localStorage.getItem("knowledge"));
 var wisdom = parseInt(localStorage.getItem("wisdom"));
 
@@ -38,7 +37,7 @@ var social = parseInt(localStorage.getItem("social"));
 var media = parseInt(localStorage.getItem("media"));
 var interactions = parseInt(localStorage.getItem("interactions"));
 var notDatingATwelveYearOld = parseInt(localStorage.getItem("notDatingATwelveYearOld"));
-var charisma = parseInt(localStorage.getItem("charisma"));
+var charizzma = parseInt(localStorage.getItem("charizzma"));
 
 
 
@@ -53,7 +52,6 @@ window.onload = function() {
   checkStat('jumping');
   checkStat('intelligence');
   checkStat('diligence');
-  checkStat('charisma');
   checkStat('knowledge');
   checkStat('wisdom');
   checkStat('prospects');
@@ -65,6 +63,7 @@ window.onload = function() {
   checkStat('dancing');
   checkStat('music');
   checkStat('programming');
+  checkStat('hobbies');
   checkStat('mentality');
   checkStat('stress');
   checkStat('sadness');
@@ -74,39 +73,42 @@ window.onload = function() {
   checkStat('media');
   checkStat('interactions');
   checkStat('notDatingATwelveYearOld');
-  checkStat('charisma');
+  checkStat('charizzma');
 
   //update stats
-  updateStat('physicality');
-  updateStat('strength');
-  updateStat('speed');
-  updateStat('endurance');
-  updateStat('jumping');
-  updateStat('intelligence');
-  updateStat('diligence');
-  updateStat('charisma');
-  updateStat('knowledge');
-  updateStat('wisdom');
-  updateStat('prospects');
-  updateStat('grades');
-  updateStat('relationship');
-  updateStat('money');
-  updateStat('coolness');
-  updateStat('cooking');
-  updateStat('dancing');
-  updateStat('music');
-  updateStat('programming');
-  updateStat('hobbies');
-  updateStat('mentality');
-  updateStat('stress');
-  updateStat('sadness');
-  updateStat('calmness');
-  updateStat('peace');
-  updateStat('social');
-  updateStat('media');
-  updateStat('interactions');
-  updateStat('notDatingATwelveYearOld');
-  updateStat('charisma');
+  
+  //health
+  setInterval(function() {
+    updateStat('physicality');
+    updateStat('strength');
+    updateStat('speed');
+    updateStat('endurance');
+    updateStat('jumping');
+    updateStat('intelligence');
+    updateStat('diligence');
+    updateStat('knowledge');
+    updateStat('wisdom');
+    updateStat('prospects');
+    updateStat('grades');
+    updateStat('relationship');
+    updateStat('money');
+    updateStat('coolness');
+    updateStat('cooking');
+    updateStat('dancing');
+    updateStat('music');
+    updateStat('programming');
+    updateStat('hobbies');
+    updateStat('mentality');
+    updateStat('stress');
+    updateStat('sadness');
+    updateStat('calmness');
+    updateStat('peace');
+    updateStat('social');
+    updateStat('media');
+    updateStat('interactions');
+    updateStat('notDatingATwelveYearOld');
+    updateStat('charizzma');
+  }, 4000);
 
   //show stats
   showStat('physicality');
@@ -114,39 +116,36 @@ window.onload = function() {
   showStat('speed');
   showStat('endurance');
   showStat('jumping');
-  showStat('intelligence');
   showStat('diligence');
-  showStat('charisma');
   showStat('knowledge');
   showStat('wisdom');
-  showStat('prospects');
   showStat('grades');
   showStat('relationship');
   showStat('money');
-  showStat('coolness');
   showStat('cooking');
   showStat('dancing');
   showStat('music');
   showStat('programming');
   showStat('hobbies');
-  showStat('mentality');
   showStat('stress');
   showStat('sadness');
   showStat('calmness');
   showStat('peace');
-  showStat('social');
   showStat('media');
   showStat('interactions');
   showStat('notDatingATwelveYearOld');
-  showStat('charisma');
+  showStat('charizzma');
+
+  //Show Level
+  showLevel('programming')
 }
 
 
-//Check stats
+//Check stats xp
 function checkStat(statName) {
   var mystat = localStorage.getItem(statName);
   var mystatXP = localStorage.getItem(statName + "XP");
-  var mystatMaxXP = localStorage.getItem(statName + "MaxXP");
+  var mystatMaxXP = mystat * 5
 
   if (mystat == null || mystatXP == null || mystatMaxXP == null) {
     mystat = 1;
@@ -155,7 +154,6 @@ function checkStat(statName) {
     localStorage.setItem(statName, mystat);
     localStorage.setItem(statName + "XP", mystatXP);
     localStorage.setItem(statName + "MaxXP", mystatMaxXP);
-    console.log(mystat, mystatXP, mystatMaxXP)
   }
   else {
     localStorage.setItem(statName, mystat);
@@ -168,8 +166,8 @@ function checkStat(statName) {
 function updateStat(statName) {
   var mystat = parseInt(localStorage.getItem(statName));
   var mystatXP = parseInt(localStorage.getItem(statName + "XP"));
-  var mystatMaxXP = parseInt(localStorage.getItem(statName + "MaxXP"));
-
+  var mystatMaxXP = mystat * 5
+  
   if (mystatXP >= mystatMaxXP) {
     mystat = mystat + 1
     mystatXP = mystatXP - mystatMaxXP
@@ -183,13 +181,33 @@ function updateStat(statName) {
 function showStat(statName) {
   var mystat = localStorage.getItem(statName);
   var mystatXP = localStorage.getItem(statName + "XP");
-  var mystatMaxXP = localStorage.getItem(statName + "MaxXP");
+  var mystatMaxXP = mystat * 5
   if (mystat != null && mystatXP != null && mystatMaxXP != null) {
     mystat = parseInt(mystat);
     mystatXP = parseInt(mystatXP)
     mystatMaxXP = parseInt(mystatMaxXP)
 
     var statBarText = document.getElementById(statName + "BarText")
-    statBarText.innerHTML = "Lvl: " + mystat + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + mystatXP + "/" + mystatMaxXP
+    statBarText.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + mystatXP + "/" + mystatMaxXP
+  }
+}
+
+//Show stat level
+function showLevel(statName) {
+  console.log(0)
+  var mystat = localStorage.getItem(statName);
+  var mystatXP = localStorage.getItem(statName + "XP");
+  var mystatMaxXP = mystat * 5
+  console.log(1)
+  
+  if (mystat != null && mystatXP != null && mystatMaxXP != null) {
+    mystat = parseInt(mystat);
+    mystatXP = parseInt(mystatXP)
+    mystatMaxXP = parseInt(mystatMaxXP)
+    console.log(2)
+
+    var statLvl = document.getElementById(statName + "Lvl")
+    statLvl.innerHTML =  + mystat
+    console.log(3)
   }
 }

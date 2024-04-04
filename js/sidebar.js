@@ -10,8 +10,8 @@ function sideBar() {
         menu
         </span>
       </div>
-      <a href='#'>Home</a>
-      <a href='#'>ToDo</a>
+      <a href='index.html'>Home</a>
+      <a href='stats.html'>Stats</a>
       <a href='daily.html'>Daily</a>
       <a href='#'>Weekly</a>
       <a href='login.html'>Login</a>
