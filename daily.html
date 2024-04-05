@@ -3,62 +3,106 @@
 <head>
   <!-- Meta tags for SEO -->
   <meta charset="UTF-8">
-  <meta name="desription" content="This is the home page for my task website that helps me">
+  <meta name="description" content="This is the home page for my task website that helps me">
   <meta name="keywords" content="TaskRPG, Task, Website, Rpg, Helpful, Time Management">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robot" content="noindex, nofollow">
+  <meta name="robots" content="noindex, nofollow">
   <meta name="author" content="Hidden Panda">
   <meta name="copyright" content="Copyright (c) 2024 Hidden Panda">
+  <meta name="google" value="notranslate"> 
   
-<!-- Website title -->
+  <!-- Website title -->
   <title>Cool Website</title>
   
-<!-- Links to CSS and Javascript -->
+  <!-- Links to CSS and Javascript -->
   <script src="./js/script.js"></script>
   <script src="./js/sidebar.js"></script>
+  <script src="./js/box_script.js"></script>
   <link rel="stylesheet" href="css/main_style.css">
   <link rel="stylesheet" href="css/sidebar_style.css">
-
-<!-- Favicon code-->
+  <link rel="stylesheet" href="css/box_style.css">
+  
+  <!-- Favicon code-->
   <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-<!-- Webmanifest -->
+  <!-- Webmanifest -->
   <link rel="manifest" href="site.webmanifest" />
   
-<!-- Menu Icon -->
+  <!-- Menu Icon -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- Link to Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
 </head>
   
 <!-- Navigation Bar-->
 <body>
   <header>
     <div class="navbar" id="navbar">
-      <span class="material-symbols-outlined" style="font-size: 30px;" onclick="sideBar()" id="menuButton">
-      menu
-      </span>
-      <a href="login.html">Login</a>
-      <a href="#about">ToDo</a>
-      <a href="#contact">Weekly</a>
-      <a href="#daily">Daily</a>
-      <a class="active" href="index.html">Home</a>
-      <img src="android-chrome-192x192.png" alt="Logo" width="30" height="30" id="icon">
+      <div class="navbar-content">
+        <span class="material-symbols-outlined" style="font-size: 30px;" onclick="sideBar()" id="menuButton">
+          menu
+        </span>
+        <div class="levelContainer">
+          <div id="levelOutput" class="levelOutput">
+            <span class="levelNumber" id="levelNumber"></span>
+          </div>
+          <div class="levelBar" id="levelBar">
+            <div class="levelBarText" id="levelBarText""></div>
+          </div>
+        </div>
+        <a href="login.html">Market</a>
+        <a href="stats.html">Stats</a>
+        <a href="daily.html">Quests</a>
+        <a class="active" href="index.html">Home</a>
+        <img src="android-chrome-192x192.png" alt="Logo" width="30" height="30" id="icon">
+      </div>
     </div>
-    <div id="sidebar">
-    </div>
+    <div id="sidebar"></div>
   </header>
   
-<!-- Main content -->
-  <main class="main">
-<!-- Add boxes circle-->
+  <!-- Main content -->
+  <main class="mainQuest">
+    <!-- Button to open popup -->
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <h2>Popup Title</h2>
+        <p>Popup content goes here...</p>
 
-  </main>
+        <textarea id="myTextarea" class="text-box"></textarea>
 
-<!-- Add boxes square-->
-    <div id="div1">
+
+        <!-- Submit button -->
+        <button onclick="logTextarea()" class="submit-btn">Submit</button>
+
+        <!-- Dark rectangles container -->
+        <div class="bottom-left">
+          <div class="dark-rectangle"></div>
+          <div class="dark-rectangle"></div>
+          <div class="dark-rectangle"></div>
+        </div>
+      </div>
     </div>
+
+    <!-- Button to open popup -->
+    <button onclick="openPopup()">Open Popup</button>
   </main>
+
+
+  <!-- Popup -->
+  
+
+
+
+
+
+
+
+  <!-- Add boxes square-->
+  <div id="div1"></div>
 </body>
 </html>

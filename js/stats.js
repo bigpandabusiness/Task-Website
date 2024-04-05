@@ -138,6 +138,29 @@ window.onload = function() {
 
   //Show Level
   showLevel('programming')
+  showLevel('dancing')
+  showLevel('music')
+  showLevel('hobbies')
+  showLevel('cooking')
+  showLevel('stress');
+  showLevel('sadness');
+  showLevel('calmness');
+  showLevel('peace');
+  showLevel('media');
+  showLevel('interactions');
+  showLevel('notDatingATwelveYearOld');
+  showLevel('charizzma');
+  showLevel('physicality');
+  showLevel('strength');
+  showLevel('speed');
+  showLevel('endurance');
+  showLevel('jumping');
+  showLevel('diligence');
+  showLevel('knowledge');
+  showLevel('wisdom');
+  showLevel('grades');
+  showLevel('relationship');
+  showLevel('money');
 }
 
 
@@ -206,8 +229,8 @@ function showLevel(statName) {
     mystatMaxXP = parseInt(mystatMaxXP)
     console.log(2)
 
-    var statLvl = document.getElementById(statName + "Lvl")
-    statLvl.innerHTML =  + mystat
+    var statLvl = document.getElementById(statName + "LevelNumber")
+    statLvl.innerHTML = mystat
     console.log(3)
   }
 }
