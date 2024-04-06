@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
 </head>
   
-<!-- Navigation Bar-->
+<!-- Navigation Bar -->
 <body>
   <header>
     <div class="navbar" id="navbar">
@@ -72,27 +72,36 @@
         <span class="close-btn" onclick="closePopup()">×</span>
         <h2>Popup Title</h2>
         <p>Popup content goes here...</p>
-
-        <textarea id="myTextarea" class="text-box"></textarea>
+        <div class="textareaContainer">
+        <textarea placeholder="Describe the task" id="myTextarea" class="text-box"></textarea>
+        </div>
+        <div id="draggable-column">
+          <div class="draggable-box" draggable="true">Box 1</div>
+          <div class="draggable-box" draggable="true">Box 2</div>
+          <div class="draggable-box" draggable="true">Box 3</div>
+        </div>
 
 
         <!-- Submit button -->
-        <button onclick="logTextarea()" class="submit-btn">Submit</button>
+        <button onclick="logTextarea(); closePopup()"  class="submit-btn">Submit</button>
 
         <!-- Dark rectangles container -->
         <div class="bottom-left">
           <div class="dark-rectangle"></div>
           <div class="dark-rectangle"></div>
           <div class="dark-rectangle"></div>
+
+          
+         
+          </div>
         </div>
       </div>
     </div>
-
+   
     <!-- Button to open popup -->
     <button onclick="openPopup()">Open Popup</button>
   </main>
-
-
+  
   <!-- Popup -->
   
 
