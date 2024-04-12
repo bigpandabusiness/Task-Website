@@ -1,9 +1,12 @@
 function openPopup() {
     document.getElementById("popup").style.display = "block"; // Show the popup
+
+  addStat("wisdom")
 }
 
 function closePopup() {
-    document.getElementById("popup").style.display = "none"; // Hide the popup
+    // Hide the popup
+document.getElementById("popup").style.display = "none";
 }
 
 
@@ -15,48 +18,55 @@ function logTextarea() {
 
 
 
+function addStat(addStat) {
+  darkBox1 = document.getElementById("dark-rectangle-1");
+  darkBox2 = document.getElementById("dark-rectangle-2");
+  darkBox3 = document.getElementById("dark-rectangle-3");
+  flag1 = 0
+  flag2 = 0
+  flag3 = 0
+  
+  var xpStat = document.getElementById(addStat + "XPAdd")
 
-document.addEventListener("DOMContentLoaded", function() {
-    var draggableBoxes = document.querySelectorAll(".draggable-box");
-    var darkBoxes = document.querySelectorAll(".dark-rectangle");
+  const node = xpStat;
+  const clone = node.cloneNode(true);
+  clone.classList.add("clone")
 
-    var activatedBox = 0; // Initialize the activated box counter
+  //Code to move stat boxes to dark boxes
+  var rect1 = darkBox1.getBoundingClientRect();
+  var x1 = rect1.left;
+  var y1 = rect1.top;
 
-    draggableBoxes.forEach(function(box, index) {
-        box.addEventListener("click", function() {
-            console.log("Box clicked"); // Check if the click event is registered
+  var rect2 = darkBox2.getBoundingClientRect();
+  var x2 = rect2.left;
+  var y2 = rect2.top;
 
-            // Find the index of the clicked box
-            var clickedBoxIndex = index + 1; // Adding 1 to match the box numbering (1-based index)
+  var rect3 = darkBox3.getBoundingClientRect();
+  var x3 = rect3.left;
+  var y3 = rect3.top;
 
-            // If the clicked box is already activated or it's not the next box in sequence, return
-            if (clickedBoxIndex <= activatedBox) {
-                console.log("Box already activated or not in sequence");
-                return;
-            }
+  
+  if (flag1 == 0) {
+    clone.style.position = "absolute";
+    clone.style.left = x1-5 + "px";
+    clone.style.top = y1-5 + "px";
+    document.body.appendChild(clone)
+    flag1 = 1
+  }
+  else if (flag2 == 0) {
+      clone.style.position = "absolute";
+      clone.style.left = x2-5 + "px";
+      clone.style.top = y2-5 + "px";
+      document.body.appendChild(clone)
+      flag2 = 1
+    }
+  else if (flag3 == 0) {
+    clone.style.position = "absolute";
+    clone.style.left = x3-5 + "px";
+    clone.style.top = y3-5 + "px";
+    document.body.appendChild(clone)
+    flag3 = 1
+  }
+}
 
-            // Clone the clicked box
-            var clonedBox = box.cloneNode(true);
-            clonedBox.classList.add("cloned-box");
-
-            // Position the cloned box at the next available dark box
-            var nextDarkBox = darkBoxes[activatedBox];
-            if (nextDarkBox) {
-                var nextDarkBoxRect = nextDarkBox.getBoundingClientRect();
-                clonedBox.style.position = "absolute";
-                clonedBox.style.left = nextDarkBoxRect.left + "px";
-                clonedBox.style.top = nextDarkBoxRect.top + "px";
-
-                // Append the cloned box to the body
-                document.body.appendChild(clonedBox);
-
-                // Update the activated box counter
-                activatedBox++;
-                console.log("Cloned box created in the next available dark box");
-            } else {
-                console.log("Next dark box not found");
-            }
-        });
-    });
-});
 

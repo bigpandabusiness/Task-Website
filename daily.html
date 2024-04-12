@@ -28,6 +28,13 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+
+  <!-- Link to MDL -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+  
   <!-- Webmanifest -->
   <link rel="manifest" href="site.webmanifest" />
   
@@ -69,31 +76,64 @@
     <!-- Button to open popup -->
     <div class="popup" id="popup">
       <div class="popup-content">
-        <span class="close-btn" onclick="closePopup()">×</span>
-        <h2>Popup Title</h2>
-        <p>Popup content goes here...</p>
+        <span class="close-btn" onclick="closePopup()" id="closeButton">×</span>
+        <h3>Popup Title</h3>
         <div class="textareaContainer">
         <textarea placeholder="Describe the task" id="myTextarea" class="text-box"></textarea>
         </div>
-        <div id="draggable-column">
-          <div class="draggable-box" draggable="true">Box 1</div>
-          <div class="draggable-box" draggable="true">Box 2</div>
-          <div class="draggable-box" draggable="true">Box 3</div>
-        </div>
+        <div class="xp-container">
+          <div class="xpboxHealth" id="physicalityXPAdd">physicality</div>
+          <div class="xpboxHealth" id="strengthXPAdd">strength</div>
+          <div class="xpboxHealth" id="speedXPAdd">speed</div>
+          <div class="xpboxHealth" id="enduranceXPAdd">endurance</div>
+          <div class="xpboxHealth" id="jumpingXPAdd">jumping</div>
+          <div class="xpboxKnowledge" id="intelligenceXPAdd">intelligence</div>
+          <div class="xpboxKnowledge" id="diligenceXPAdd">dilligence</div>
+          <div class="xpboxKnowledge" id="wisdomXPAdd">wisdom</div>
+          <div class="xpboxProspects" id="gradesXPAdd">grades</div>
+          <div class="xpboxProspects" id="relationshipXPAdd">relationship</div>
+          <div class="xpboxProspects" id="moneyXPAdd">money</div>
+          <div class="xpboxCoolness" id="cookingXPAdd">cooking</div>
+          <div class="xpboxCoolness" id="dancingXPAdd">dancing</div>
+          <div class="xpboxCoolness" id="musicXPAdd">music</div>
+          <div class="xpboxCoolness" id="programmingXPAdd">programming</div>
+          <div class="xpboxMentality" id="stressXPAdd">stress</div>
+          <div class="xpboxMentality" id="sadnessXPAdd">sadness</div>
+          <div class="xpboxMentality" id="calmnessXPAdd">calmness</div>
+          <div class="xpboxMentality" id="peaceXPAdd">peace</div>
 
+          <div class="xpboxSocial" id="mediaXPAdd">media</div>
+          <div class="xpboxSocial" id="interactionsXPAdd">interactions</div>
+          <div class="xpboxSocial" id="notDatingATwelveYearOldXPAdd">NDATYO</div>
+          <div class="xpboxSocial" id="charizzmaXPAdd">charizzma</div>
+        </div>
 
         <!-- Submit button -->
         <button onclick="logTextarea(); closePopup()"  class="submit-btn">Submit</button>
 
+
         <!-- Dark rectangles container -->
         <div class="bottom-left">
-          <div class="dark-rectangle"></div>
-          <div class="dark-rectangle"></div>
-          <div class="dark-rectangle"></div>
-
-          
-         
-          </div>
+          <div class="dark-rectangle" id="dark-rectangle-1"></div>
+          <div class="dark-rectangle" id="dark-rectangle-2"></div>
+          <div class="dark-rectangle" id="dark-rectangle-3"></div>
+        </div>
+        <div class="slider-container">
+          Easy
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+            <input type="checkbox" id="switch-1" class="mdl-switch__input">
+            <span class="mdl-switch__label"></span>
+          </label>
+          Medium
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+            <input type="checkbox" id="switch-2" class="mdl-switch__input">
+            <span class="mdl-switch__label"></span>
+          </label>
+          Hard
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-3">
+            <input type="checkbox" id="switch-3" class="mdl-switch__input">
+            <span class="mdl-switch__label"></span>
+          </label>
         </div>
       </div>
     </div>

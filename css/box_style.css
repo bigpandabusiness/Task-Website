@@ -30,8 +30,8 @@
     background-color: #363636;
     padding: 20px;
     border-radius: 5px;
-    width: 60%;
-    height: 60%;
+    width: 65%;
+    height: 65%;
 }
 
 .close-btn {
@@ -80,41 +80,89 @@
     resize: none; /* Disable textarea resizing */
 }
 
-.draggable-container {
-    float: right;
-    width: 100%;
-    height: 1000px;
-}
-
-.draggable-box {
-    width: 90px; /* Same width as dark rectangles */
-    height: 30px; /* Same height as dark rectangles */
-    background-color: #ffcc00; /* Example color for the draggable box */
-    position: absolute;
-    top: 50%;
-    right: 0; /* Adjusted position */
-    z-index: 1; /* Ensure it appears above other elements */
-    cursor: grab;
-}
-
-.draggable-box:active {
-    cursor: grabbing;
-}
-
-.draggable-box {
-    user-select: none;
-}
-
 .textareaContainer {
   width: 50%;
   height: 50%;
 }
 
+.xp-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  float: right;
+  width: 400px; /* Added 'px' unit */
+  height: 200px; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-top: -25%;
+}
+
+.xpboxHealth {
+  width: 90px;
+  height: 30px;
+  background-color: #58ff56;
+  margin: 5px;
+  color: white;
+  text-align: center;
+}
+
+.xpboxKnowledge {
+  width: 90px;
+  height: 30px;
+  background-color: #ff9742;
+  margin: 5px;
+  color: white;
+  text-align: center;
+}
+
+.xpboxProspects {
+  width: 90px;
+  height: 30px;
+  background-color: #D4AF37;
+  margin: 5px;
+  color: white;
+  text-align: center;
+}
+
+.xpboxCoolness {
+  width: 90px;
+  height: 30px;
+  background-color: #35d4ac;
+  margin: 5px;
+  color: white;
+  text-align: center;
+}
+
+.xpboxMentality {
+  width: 90px;
+  height: 30px;
+  background-color: #8d35d4;
+  margin: 5px;
+  color: white;
+  text-align: center;
+}
+
+.xpboxSocial {
+  width: 90px;
+  height: 30px;
+  background-color: #d43535;
+  margin: 5px;
+  color: white;
+  text-align: center;
+}
 
 
+.mdl-switch {
+    display: flex;
+    margin-top: 20px; /* Adjust as needed */
+    margin-left: auto; /* Move to the right side */
+    margin-right: auto; /* Move to the left side */
+    width: fit-content; /* Adjust width as needed */
+}
 
+.slider-container {
+    display: flex;
+}
 
-
-
-
-
+.clone {
+  z-index: 1;
+}
