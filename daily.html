@@ -44,6 +44,10 @@
   <!-- Link to Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
 </head>
+
+  <!-- link to flatpickr to make the calender show -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   
 <!-- Navigation Bar -->
 <body>
@@ -87,7 +91,7 @@
           <div class="xpboxHealth" id="speedXPAdd">speed</div>
           <div class="xpboxHealth" id="enduranceXPAdd">endurance</div>
           <div class="xpboxHealth" id="jumpingXPAdd">jumping</div>
-          <div class="xpboxKnowledge" id="intelligenceXPAdd">intelligence</div>
+          <div class="xpboxKnowledge" id="knowledgeXPAdd">knowledge</div>
           <div class="xpboxKnowledge" id="diligenceXPAdd">dilligence</div>
           <div class="xpboxKnowledge" id="wisdomXPAdd">wisdom</div>
           <div class="xpboxProspects" id="gradesXPAdd">grades</div>
@@ -109,7 +113,7 @@
         </div>
 
         <!-- Submit button -->
-        <button onclick="logTextarea(); closePopup()"  class="submit-btn">Submit</button>
+        <button onclick="logTextarea(); pickTime()"  class="submit-btn">Submit</button>
 
 
         <!-- Dark rectangles container -->
@@ -117,23 +121,6 @@
           <div class="dark-rectangle" id="dark-rectangle-1"></div>
           <div class="dark-rectangle" id="dark-rectangle-2"></div>
           <div class="dark-rectangle" id="dark-rectangle-3"></div>
-        </div>
-        <div class="slider-container">
-          Easy
-          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
-            <input type="checkbox" id="switch-1" class="mdl-switch__input">
-            <span class="mdl-switch__label"></span>
-          </label>
-          Medium
-          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
-            <input type="checkbox" id="switch-2" class="mdl-switch__input">
-            <span class="mdl-switch__label"></span>
-          </label>
-          Hard
-          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-3">
-            <input type="checkbox" id="switch-3" class="mdl-switch__input">
-            <span class="mdl-switch__label"></span>
-          </label>
         </div>
       </div>
     </div>
@@ -149,9 +136,42 @@
 
 
 
-
+  <div class="pickTimePopup" id="pickTimePopup">
+    <div class="pickTimePopupContent">
+      <span class="close-btn" onclick="closeTimerPopup(); closePopup()" id="closeButton">×</span>
+      <div class="timerContainer">
+        
+      </div>
+      <div class="calendarContainer">
+        <input type="text" id="calendarInput" placeholder="Select Date">
+        <script>
+            // Initialize flatpickr
+            flatpickr("#calendarInput", {
+                dateFormat: "Y-m-d", // Date format
+                onClose: function(selectedDates, dateStr, instance) {
+                    // Callback function to handle the selected date
+                    console.log("Selected Date:", dateStr);
+                    // You can pass the selected date to your JavaScript function here
+                    // For example: myFunction(dateStr);
+                }
+            });
+        </script>
+      </div>
+      <div class="setTimerContainer">
+        
+      </div>
+      <div class="setDateContainer">
+        
+      </div>
+      <div class="timerShow" id="timerShow">Timer</div>
+      <button onclick="createBox(); closePopup(); closeTimerPopup();"  class="create-btn">Create Quest</button>
+    </div>
+    
+  </div>
 
   <!-- Add boxes square-->
-  <div id="div1"></div>
+  <div class="div-container">
+    <div id="div1"></div>
+  </div>
 </body>
 </html>
