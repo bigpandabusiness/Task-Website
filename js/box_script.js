@@ -66,30 +66,37 @@ function addStat(addStat) {
     clone.style.position = "absolute";
     clone.style.left = x1-5 + "px";
     clone.style.top = y1-5 + "px";
-    console.log(x1, y1)
     document.body.appendChild(clone)
     flag1 = 1
-    // addXP(addXP)
+    saveXP(addStat)
   }
   else if (flag2 != 1) {
     clone.style.position = "absolute";
     clone.style.left = x2-5 + "px";
     clone.style.top = y2-5 + "px";
-    console.log(x2, y2)
     document.body.appendChild(clone)
     flag2 = 1
-    // addXP(addXP)
+    saveXP(addStat)
     }
   else if (flag3 != 1) {
     clone.style.position = "absolute";
     clone.style.left = x3-5 + "px";
     clone.style.top = y3-5 + "px";
-    console.log(x3, y3)
     document.body.appendChild(clone)
     flag3 = 1
-    // addXP(addXP)
+    saveXP(addStat)
   }
   return clone
+}
+
+function saveXP(addXp) {
+  console.log(addXp)
+  xpSave = parseInt(localStorage.getItem(addXp + "Save"))
+  console.log(xpSave)
+  if (xpSave == null) {
+    xpSave = 0
+  }
+  xpSave
 }
 
 
@@ -159,6 +166,7 @@ function pickTime() {
 
 
 // Function to start the timer and create a box with the timer display
+
 function createBox() {
     // Remove any existing boxes
     removeElementsByClass("clone");
@@ -166,15 +174,15 @@ function createBox() {
     // Create box element
     var box = document.createElement("div");
     box.classList.add("questBox");
-    box.style.backgroundColor = "#96237a";
 
     // Create timer display element
     var display = document.createElement("div");
     display.id = "showTimer"; // Make sure this element has the ID "timerShow"
+    display.classList.add("timerDisplay");
     display.innerHTML = "00:00:00";
     box.appendChild(display); 
     div1.appendChild(box);
-
+    
     setTimer()
 }
 
@@ -187,7 +195,7 @@ function setTimer() {
 
     // Set interval to update the timer display every second
     setInterval(updateTimer, 1000);
-
+  
     function updateTimer() {
         // Calculate time difference
       var currentDate = new Date();
