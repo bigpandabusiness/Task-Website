@@ -135,7 +135,7 @@
 
 
 
-
+  
   <div class="pickTimePopup" id="pickTimePopup">
     <div class="pickTimePopupContent">
       <span class="close-btn" onclick="closeTimerPopup(); closePopup()" id="closeButton">×</span>
@@ -143,11 +143,12 @@
         
       </div>
       <div class="calendarContainer">
+        <div class="popupHeading">Calendar</div>
         <input type="text" id="calendarInput" placeholder="Select Date">
         <script>
             // Initialize flatpickr
             flatpickr("#calendarInput", {
-                dateFormat: "Y-m-d", // Date format
+                dateFormat: "Y-m-dTH:i:S-04:00", // Date format
                 onClose: function(selectedDates, dateStr, instance) {
                     // Callback function to handle the selected date
                     console.log("Selected Date:", dateStr);
@@ -163,7 +164,8 @@
       <div class="setDateContainer">
         
       </div>
-      <div class="timerShow" id="timerShow">Timer</div>
+      
+      <div class="timerShow" id="timerShow2">Timer</div>
       <button onclick="closePopup(); closeTimerPopup(); createBox();"  class="create-btn">Create Quest</button>
     </div>
     

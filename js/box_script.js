@@ -12,6 +12,25 @@ document.getElementById("popup").style.display = "none";
   return flag1, flag2, flag3
 }
 
+function deleteBox(button) {
+  console.log("deleteBox")
+  var boxToDelete = button.closest('.questBox'); // Find the closest parent element with class 'questBox'
+  if (boxToDelete) {
+      boxToDelete.remove();
+  }
+  console.log("Box has been deleted")
+}
+
+function completeQuest(button) {
+  console.log("completeQuest")
+  var boxToComplete = button.closest('.questBox'); // Find the closest parent element with class 'questBox'
+  if (boxToComplete) {
+      boxToComplete.classList.add('completed');
+  }
+  console.log("Quest has been completed")
+}
+
+
 function closeTimerPopup() {
   removeElementsByClass("clone");
     // Hide the popup
@@ -27,6 +46,7 @@ document.getElementById("pickTimePopup").style.display = "none";
 function logTextarea() {
   var textareaValue = document.getElementById("myTextarea").value;
   console.log(textareaValue);
+  localStorage.setItem("saveText", textareaValue);
 }
 
 
@@ -39,14 +59,13 @@ function addStat(addStat) {
   var darkBox2 = document.getElementById("dark-rectangle-2");
   var darkBox3 = document.getElementById("dark-rectangle-3");
 
-  
-  var xpStat = document.getElementById(addStat + "XPAdd")
 
+  var xpStat = document.getElementById(addStat + "XPAdd")
   const node = xpStat;
   const clone = node.cloneNode(true);
   clone.classList.add("clone")
   clone.id = addStat + "XPAddClone"
-  
+
 
   //Code to move stat boxes to dark boxes
   var rect1 = darkBox1.getBoundingClientRect();
@@ -56,12 +75,12 @@ function addStat(addStat) {
   var rect2 = darkBox2.getBoundingClientRect();
   var x2 = rect2.left;
   var y2 = rect2.top;
-  
+
   var rect3 = darkBox3.getBoundingClientRect();
   var x3 = rect3.left;
   var y3 = rect3.top;
 
-  
+
   if (flag1 != 1) {
     clone.style.position = "absolute";
     clone.style.left = x1-5 + "px";
@@ -89,14 +108,23 @@ function addStat(addStat) {
   return clone
 }
 
-function saveXP(addXp) {
-  console.log(addXp)
-  xpSave = parseInt(localStorage.getItem(addXp + "Save"))
+function saveXP(saveXP) {
+  console.log(saveXP)
+  xpSave = (localStorage.getItem(saveXP + "Save"))
   console.log(xpSave)
   if (xpSave == null) {
-    xpSave = 0
+    parseInt(localStorage.setItem(saveXP + "Save", 0))
+    console.log(xpSave)
+    xpSave = localStorage.getItem(saveXP + "Save")
+    console.log(xpSave)
   }
-  xpSave
+  else {
+    xpSave = localStorage.getItem(saveXP + "Save")
+  }
+  console.log(xpSave)
+  xpSave = parseInt(xpSave) + 1
+  localStorage.setItem(saveXP + "Save", xpSave)
+  console.log(xpSave)
 }
 
 
@@ -172,19 +200,67 @@ function createBox() {
     removeElementsByClass("clone");
 
     // Create box element
+    // var boxId = Date.new()
     var box = document.createElement("div");
     box.classList.add("questBox");
+    // box.id = boxId;
+    
+    
 
     // Create timer display element
     var display = document.createElement("div");
     display.id = "showTimer"; // Make sure this element has the ID "timerShow"
     display.classList.add("timerDisplay");
     display.innerHTML = "00:00:00";
+    var text = localStorage.getItem("saveText");
+    textDisplay = document.createElement("div");
+    textDisplay.classList.add("textDisplayBox");
+    textDisplay.innerHTML = text
+    box.appendChild(textDisplay);
     box.appendChild(display); 
-    div1.appendChild(box);
     
+    // Find the previous box
+    var previousBox = document.querySelector('.questBox');
+
+    // If there's a previous box, insert the new box before it
+    if (previousBox) {
+        previousBox.parentNode.insertBefore(box, previousBox);
+    } else {
+        // If there's no previous box, append the new box to the parent element
+        div1.appendChild(box);
+    }
+
+  
+    box.innerHTML = box.innerHTML + '<span class="closeBtnBox" onclick="deleteBox()" id="closeButton">×</span>' + '<span class="completeQuestBtn" onclick="deleteBox(this); completeQuest()" id="completeQuestBtn">✓</span>'
+
+    var statKeys = ["physicality", "strength", "speed", "endurance", "jumping", "diligence", "knowledge", "wisdom", "grades", "relationship", "money", "cooking", "dancing", "music", "programming", "stress", "sadness", "calmness", "peace", "media", "interactions" ,"notDatingATwelveYearOld", "charizzma"];
+
+    // Retrieve values from localStorage for each stat key
+    statKeys.forEach(function(statKey) {
+        var xpValue = localStorage.getItem(statKey + "Save");
+        if (xpValue == null) {
+          localStorage.setItem(statKey + "Save", 0)
+          xpValue = localStorage.setItem(statKey + "Save");
+          console.log(xpValue)
+        }
+        if(xpValue > 0) {
+          var xpStat = document.getElementById(statKey + "XPAdd")
+          console.log(xpStat)
+          const node = xpStat
+          const clone = node.cloneNode(true);
+          clone.classList.add("clone-box")
+          clone.id = addStat + "XPAddClone"
+          box.appendChild(clone)
+          localStorage.setItem(statKey + "Save", 0);
+          xpValue = localStorage.getItem(statKey + "Save")
+          
+        }
+        console.log(statKey + " XP:", xpValue);
+    })
     setTimer()
+    console.log("Set timer running")
 }
+
 
 function setTimer() {
     // Get the timerDisplay element by ID here
